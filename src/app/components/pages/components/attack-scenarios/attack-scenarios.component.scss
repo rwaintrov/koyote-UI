@@ -1,0 +1,7 @@
+:host {
+  ::ng-deep {
+    .header-logos-card {
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
+}
