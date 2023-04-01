@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Table } from 'primeng/table';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import {Product, ProductService} from "../../services/product.service";
-import {Customer, Representative} from "../../../../interfaces/device.interface";
+import {Customer, Device, Representative} from "../../../../interfaces/device.interface";
 import {CustomerService} from "../../../../services/costumer.service";
+import {DeviceService} from "../../services/device.service";
 
 interface expandedRows {
   [key: string]: boolean;
@@ -15,6 +16,7 @@ interface expandedRows {
   styleUrls: ['./device.component.scss']
 })
 export class DeviceComponent implements OnInit {
+  devices:Device[]=[];
 
   customers1: Customer[] = [];
 
@@ -46,15 +48,15 @@ export class DeviceComponent implements OnInit {
 
   @ViewChild('filter') filter!: ElementRef;
 
-  constructor(private customerService: CustomerService, private productService: ProductService) { }
+  constructor(private customerService: CustomerService, private productService: ProductService,private deviceService: DeviceService) { }
 
   ngOnInit() {
-    this.customerService.getCustomersLarge().then(customers => {
-      this.customers1 = customers;
+    this.deviceService.getDevices().then(devices => {
+      this.devices = devices;
       this.loading = false;
 
       // @ts-ignore
-      this.customers1.forEach(customer => customer.date = new Date(customer.date));
+      this.devices.forEach(device => device.date = new Date(device.date));
     });
     this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
     this.customerService.getCustomersLarge().then(customers => this.customers3 = customers);

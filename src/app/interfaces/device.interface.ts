@@ -1,12 +1,11 @@
 export interface Device {
   id: string;
   category: string;
-  vendor:Vendor;
+  vendor:string;
   IP_address:string;
   MAC_address:string;
-  Serious:string;
+  series:string;
   model:string;
-
   firmware:string;
   lastUpdate:Date;
   lastSeen:Date;
