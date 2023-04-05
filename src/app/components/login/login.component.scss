@@ -7,3 +7,24 @@ i {
     opacity: 1;
   }
 }
+
+.bg-login {
+  background: #000428; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #004e92, #000428); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button.p-element.w-20rem.p-button.p-component {
+  background: #004e92;
+  border: solid #0000004d 3px;
+}
+
+:host ::ng-deep {
+  input.p-inputtext.p-component.p-element.ng-tns-c124-0.p-password-input {
+    width: 20rem;
+  }
+  input.p-inputtext.p-component.p-element{
+    width: 20rem;
+  }
+}
+//.ng-valid.ng-dirty.ng-touched

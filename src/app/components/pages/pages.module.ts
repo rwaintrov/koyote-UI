@@ -31,6 +31,7 @@ import {ToastModule} from "primeng/toast";
 import {RatingModule} from "primeng/rating";
 import {MultiSelectModule} from "primeng/multiselect";
 import {SliderModule} from "primeng/slider";
+import {ChipsModule} from "primeng/chips";
 // import {ChartModule} from "primeng/chart";
 
 
@@ -54,28 +55,29 @@ import {SliderModule} from "primeng/slider";
     TopBarComponent,
     ConfigComponent
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule,
-    StyleClassModule,
-    TooltipModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    FormsModule,
-    SidebarModule,
-    DropdownModule,
-    TableModule,
-    MenuModule,
-    ChartModule,
-    ButtonModule,
-    FileUploadModule,
-    ToggleButtonModule,
-    ToastModule,
-    RatingModule,
-    MultiSelectModule,
-    SliderModule,
-    // ChartModule,
+    imports: [
+        CommonModule,
+        PagesRoutingModule,
+        StyleClassModule,
+        TooltipModule,
+        RadioButtonModule,
+        InputSwitchModule,
+        FormsModule,
+        SidebarModule,
+        DropdownModule,
+        TableModule,
+        MenuModule,
+        ChartModule,
+        ButtonModule,
+        FileUploadModule,
+        ToggleButtonModule,
+        ToastModule,
+        RatingModule,
+        MultiSelectModule,
+        SliderModule,
+        ChipsModule,
+        // ChartModule,
 
-  ]
+    ]
 })
 export class PagesModule { }
