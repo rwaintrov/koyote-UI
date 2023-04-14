@@ -7,7 +7,9 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class DeviceService {
-  json:any[]=[];
+  // json:any[]=[];
+  vendors:any[]=[];
+  devices: Device[] = [{}];
 
   constructor(private http: HttpClient) { }
   getDevices() {
@@ -18,7 +20,33 @@ export class DeviceService {
     // })
     // console.log(this.json);
   }
-
+  getVendors() {
+    this.getDevices().subscribe((res: any) => {
+        this.devices = res.data
+        console.log(this.devices)
+        let j = 0;
+        let i = 0;
+        let x = 0;
+        // debugger
+        this.vendors[0] = this.devices[0].vendor
+        for (i = 1; i < this.devices.length; i++) {
+          let temp = this.devices[i].vendor
+          for (j = 0; j <= 10; j++) {
+            if (this.vendors[j] == temp) {
+              break;
+            }
+          }
+          if (j == 11) {
+            x++;
+            this.vendors[x] = temp;
+          }
+          j = 0;
+        }
+        console.log(this.vendors+"bbbb");
+        return this.vendors
+      }
+    )
+  }
 
 
   // getDevices() {

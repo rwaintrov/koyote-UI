@@ -1,0 +1,13 @@
+:host ::ng-deep {
+  .p-breadcrumb.p-component {
+    height: 80px;
+    display: flex;
+    //width: 80%;
+  }
+  span.p-menuitem-text.ng-star-inserted {
+    font-size: 12px;
+  }
+  .p-breadcrumb ul{
+    width:80%
+  }
+}

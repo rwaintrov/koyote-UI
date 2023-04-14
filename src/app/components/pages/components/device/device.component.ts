@@ -59,37 +59,44 @@ export class DeviceComponent implements OnInit {
   //   .toPromise()
   //   .then((res:any) => res.data as Device[])
   //   .then((data:any) => data);
-   getDevices() {
-     this.deviceService.getDevices().subscribe((res: any) => {
-        this.devices = res.data
-        console.log(this.devices)
-        this.loading = false;
-        let j = 0;
-        let i = 0;
-        let x = 0;
-        // debugger
-        this.vendors[0] = this.devices[0].vendor
-        for (i = 1; i < this.devices.length; i++) {
-          let temp = this.devices[i].vendor
-          for (j = 0; j <= 10; j++) {
-            if (this.vendors[j] == temp) {
-              break;
-            }
-          }
-          if (j == 11) {
-            x++;
-            this.vendors[x] = temp;
-          }
-          j = 0;
-        }
-        console.log(this.vendors);
-        return this.devices
-
-      }
-    )
+  getDevices() {
+    this.deviceService.getDevices().subscribe((res: any) => {
+      this.devices = res.data
+      console.log(this.devices)
+      this.loading = false;
+      //   let j = 0;
+      //   let i = 0;
+      //   let x = 0;
+      //   // debugger
+      //   this.vendors[0] = this.devices[0].vendor
+      //   for (i = 1; i < this.devices.length; i++) {
+      //     let temp = this.devices[i].vendor
+      //     for (j = 0; j <= 10; j++) {
+      //       if (this.vendors[j] == temp) {
+      //         break;
+      //       }
+      //     }
+      //     if (j == 11) {
+      //       x++;
+      //       this.vendors[x] = temp;
+      //     }
+      //     j = 0;
+      //   }
+      //   console.log(this.vendors);
+      //   return this.devices
+      //
+      // }
+    })
   }
 
   getVendors() {
+    this.deviceService.getVendors();
+    console.log("i here")
+    console.log(this.deviceService.getVendors())
+this.vendors=this.deviceService.vendors;
+    console.log("i here2");
+    console.log(this.vendors)
+
     // let j = 0;
     // let i = 0
     // console.log('vendors');
@@ -111,7 +118,9 @@ export class DeviceComponent implements OnInit {
   ngOnInit() {
     this.getDevices();
     this.getVendors();
-
+    console.log(this.deviceService.getVendors())
+    console.log("sssssssa")
+console.log(this.deviceService.vendors);
 
     // this.deviceService.getDevices()
     //   .then((devices:any) => {
@@ -199,7 +208,7 @@ export class DeviceComponent implements OnInit {
   }
 
 
-  @Input() data: string[]=[];
+  @Input() data: string[] = [];
   @Output() dataOutput = new EventEmitter<string[]>();
 
   sendDataToParent() {
