@@ -1,4 +1,7 @@
 @media screen and (min-width: $breakpoint) {
+  //.layout-wrapper.layout-slim .layout-menu .layout-root-menuitem > a :active{
+  //  background: red !important;
+  //}
     .layout-wrapper {
         &.layout-slim {
             .layout-topbar {

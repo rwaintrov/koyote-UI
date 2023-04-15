@@ -80,10 +80,7 @@ export class DashboardComponent implements OnInit{
       }
     ];
 
-    this.orderWeek = [
-      {name: 'This Week', code: '0'},
-      {name: 'Last Week', code: '1'}
-    ];
+
 
     this.metrics = [
       {
@@ -92,7 +89,7 @@ export class DashboardComponent implements OnInit{
         color_light: '#64B5F6',
         color_dark: '#1976D2',
         textContent: [
-          {amount: '90', text: 'Dedected'},
+          {amount: '90', text: 'Detected'},
           {amount: '15', text: 'At Risk'}
         ]
       },
@@ -102,7 +99,7 @@ export class DashboardComponent implements OnInit{
         color_light: '#7986CB',
         color_dark: '#303F9F',
         textContent: [
-          {amount: '9', text: 'Dedecteed'},
+          {amount: '9', text: 'Detected'},
           {amount: '84%', text: 'Avg.Probability'}
         ]
       },

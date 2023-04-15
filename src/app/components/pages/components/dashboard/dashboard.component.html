@@ -1,8 +1,9 @@
-<app-user-type></app-user-type>
+<!--<app-user-type></app-user-type>-->
 <div class="layout-dashboard">
   <div class="grid">
-    <div  *ngFor="let metric of metrics; let i = index" (click)="goToCourrentPage(i)" class="col-12 md:col-6 xl:col-3 cursor-pointer">
-      <div class="card shadow-1 flex flex-column"  [style.borderColor]="metric.color_light"
+    <div *ngFor="let metric of metrics; let i = index" (click)="goToCourrentPage(i)"
+         class="col-12 md:col-6 xl:col-3 cursor-pointer">
+      <div class="card shadow-1 flex flex-column" [style.borderColor]="metric.color_light"
            [style]="{'border-color': metric.color_light, 'border-left': '4px solid'}">
         <div class="flex align-items-center">
           <!--          <div class="flex justify-content-center align-items-center p-2 border-round" [style.backgroundColor]="metric.color_light">-->
@@ -36,7 +37,7 @@
         </div>
         <p-menu #menu [popup]="true" [model]="items"></p-menu>
 
-        <div class="grid mt-3">
+        <div class="grid">
           <!--          <div class="col-6 md:col-3 relative transition-all transition-duration-300 hover:shadow-3 cursor-pointer h-5rem" (click)="changeDataset($event); chart.reinit()" data-label="New Orders" data-index="0" data-fill="rgba(100, 181, 246, 0.2)" data-stroke="#BBDEFB">-->
           <!--            <span class="flex align-items-center"><i class="pi pi-plus-circle mr-1"></i> New</span>-->
           <!--            <img src="assets/demo/images/dashboard/graph-new.svg" class="absolute w-11" style="left: 5%; bottom: 0">-->
@@ -54,7 +55,7 @@
           <!--            <img src="assets/demo/images/dashboard/graph-cancelled.svg" class="absolute w-11" style="left: 5%; bottom: 0">-->
           <!--          </div>-->
 
-          <div class="col-12 mt-5">
+          <div class="col-12">
             <p-chart #chart type="line" [data]="ordersChart" [options]="ordersChartOptions" id="order-chart"></p-chart>
           </div>
         </div>
@@ -64,49 +65,53 @@
     <div (click)="goToCVE()" class="col-12 xl:col-6 cursor-pointer">
       <div class="card">
         <div class="flex justify-content-between">
-          <h4>Top 5 CVEs</h4>
-          <p-dropdown [options]="orderWeek" [(ngModel)]="selectedOrderWeek" optionLabel="name"
-                      (onChange)="recentSales($event)" styleClass="w-9rem"></p-dropdown>
+          <h4>
+            High Risk Devices
+          </h4>
+
         </div>
 
-        <p>That require immediate attention</p>
+        <p>Requires immediate attention</p>
 
-        <p-table [value]="products" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+        <p-table [value]="metrics">
           <ng-template pTemplate="header">
             <tr>
-              <th pSortableColumn="id" style="width:10%;min-width:6rem;">ID
-                <p-sortIcon field="id"></p-sortIcon>
+              <th pSortableColumn="IP" style="width:10%;min-width:6rem;">IP
+                <p-sortIcon field="IP"></p-sortIcon>
               </th>
               <th pSortableColumn="category" style="width:30%;min-width:10rem;">Category
                 <p-sortIcon field="category"></p-sortIcon>
               </th>
-              <th pSortableColumn="price" style="width:20%;min-width:10rem;">Price
-                <p-sortIcon field="price"></p-sortIcon>
+              <th pSortableColumn="Vendor" style="width:20%;min-width:10rem;">Vendor
+                <p-sortIcon field="Vendor"></p-sortIcon>
               </th>
-              <th pSortableColumn="inventoryStatus" style="width:30%;min-width:10rem;">Status
+              <th pSortableColumn="inventoryStatus" style="width:30%;min-width:10rem;">Series/Model
                 <p-sortIcon field="inventoryStatus"></p-sortIcon>
               </th>
-              <th style="width:10%;min-width:6rem;"></th>
+              <th pSortableColumn="Risk" style="width:30%;min-width:10rem;">Risk
+                <p-sortIcon field="Risk"></p-sortIcon>
+              </th>
+<!--              <th style="width:10%;min-width:6rem;"></th>-->
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-product>
             <tr>
               <td>
-                <span class="p-column-title">Id</span>
-                {{product.id}}</td>
+<!--                <span class="p-column-title">Id</span>-->
+<!--                {{product.id}}</td>-->
               <td>
-                <span class="p-column-title">Category</span>
-                {{product.category}}</td>
+<!--                <span class="p-column-title">Category</span>-->
+<!--                {{product.category}}</td>-->
               <td>
-                <span class="p-column-title">Price</span>
-                {{product.price | currency:'USD'}}</td>
+<!--                <span class="p-column-title">Price</span>-->
+<!--                {{product.price | currency:'USD'}}</td>-->
               <td>
-                <span class="p-column-title">Status</span>
-                <span
-                  [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>
+<!--                <span class="p-column-title">Status</span>-->
+<!--                <span-->
+<!--                  [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span>-->
               </td>
               <td style="text-align: center">
-                <button pButton type="button" icon="pi pi-search"></button>
+<!--                <button pButton type="button" icon="pi pi-search"></button>-->
               </td>
             </tr>
           </ng-template>
@@ -116,36 +121,36 @@
 
     <div class="col-12 lg:col-4">
       <div class="card">
-        <h4>Tasks</h4>
+        <h4>Mitigation</h4>
         <p>Overview of your pending tasks.</p>
         <div class="mt-4">
-          <span class="block mb-2"><span class="font-semibold">12 Orders</span> to fulfill</span>
+          <span class="block mb-2">P1 Tasks</span>
           <div class="w-full border-round" style="height: 7px; background-color: var(--surface-d)">
-            <div class="w-7 h-full border-round" style="background-color: #64B5F6"></div>
+            <div class="w-7 h-full border-round" style="background-color: red"></div>
           </div>
         </div>
         <div class="mt-4">
-          <span class="block mb-2"><span class="font-semibold">40+ Payments</span> to withdraw</span>
+          <span class="block mb-2">P2 Tasks</span>
           <div class="w-full border-round" style="height: 7px; background-color: var(--surface-d)">
-            <div class="w-5 h-full border-round" style="background-color: #A5D6A7"></div>
+            <div class="w-5 h-full border-round" style="background-color:#ff5e5e"></div>
           </div>
         </div>
         <div class="mt-4">
-          <span class="block mb-2"><span class="font-semibold">4 Repors</span> to revise</span>
+          <span class="block mb-2">P3 Tasks</span>
           <div class="w-full border-round" style="height: 7px; background-color: var(--surface-d)">
-            <div class="w-8 h-full border-round" style="background-color: #7986CB"></div>
+            <div class="w-8 h-full border-round" style="background-color:#ff9696"></div>
           </div>
         </div>
         <div class="mt-4">
-          <span class="block mb-2"><span class="font-semibold">6 Questions</span> to respond</span>
+          <span class="block mb-2">P4 Tasks</span>
           <div class="w-full border-round" style="height: 7px; background-color: var(--surface-d)">
-            <div class="w-4 h-full border-round" style="background-color: #9575CD"></div>
+            <div class="w-4 h-full border-round" style="background-color: #ffb9b9"></div>
           </div>
         </div>
         <div class="mt-4">
-          <span class="block mb-2"><span class="font-semibold">2 Chargebacks</span> to review</span>
+          <span class="block mb-2">P5 Tasks</span>
           <div class="w-full border-round" style="height: 7px; background-color: var(--surface-d)">
-            <div class="w-6 h-full border-round" style="background-color: #4DB6AC"></div>
+            <div class="w-6 h-full border-round" style="background-color: #ffd3d3"></div>
           </div>
         </div>
       </div>
@@ -206,3 +211,4 @@
   </div>
 
 </div>
+<app-config></app-config>

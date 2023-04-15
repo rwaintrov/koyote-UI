@@ -1,25 +1,53 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Device} from "../../../interfaces/device.interface";
-import {Observable} from "rxjs";
+import * as _ from 'lodash';
+import {map} from "rxjs";
+
+// import * as lodash from 'lodash';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeviceService {
   // json:any[]=[];
-  vendors:any[]=[];
+  vendors: any[] = [];
   devices: Device[] = [{}];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
+
+  a() {
+   return   this.http.get<any>('assets/demo/data/device.json').pipe(map(res => {
+      const devices = res['data'];
+      const vendors = devices.map((device: any) => {
+          return {name: device.vendor}
+        }
+      );
+      const uniqueVendors = _.uniqBy(vendors, function (vendor: any) {
+        return vendor.name;
+      });
+     return uniqueVendors.map(u => {
+        return {
+          label: u.name,
+          icon: 'pi pi-fw pi-align-left',
+          routerLink: ['/device', u.name]
+        }
+      });
+    }))
+
+  }
+
   getDevices() {
-     return  this.http.get<any>('assets/demo/data/device.json')
+    return this.http.get<any>('assets/demo/data/device.json')
     // .subscribe((res:any[])=>{
     //   this.json=res;
     //   console.log(res);
     // })
     // console.log(this.json);
   }
+
   getVendors() {
     this.getDevices().subscribe((res: any) => {
         this.devices = res.data
@@ -42,7 +70,7 @@ export class DeviceService {
           }
           j = 0;
         }
-        console.log(this.vendors+"bbbb");
+        console.log(this.vendors + "bbbb");
         return this.vendors
       }
     )
@@ -59,29 +87,29 @@ export class DeviceService {
   getProducts() {
     return this.http.get<any>('assets/demo/data/products.json')
       .toPromise()
-      .then((res:any) => res.data as Product[])
-      .then((data:any) => data);
+      .then((res: any) => res.data as Product[])
+      .then((data: any) => data);
   }
 
   getProductsMixed() {
     return this.http.get<any>('assets/demo/data/products-mixed.json')
       .toPromise()
-      .then((res:any) => res.data as Product[])
-      .then((data:any) => data);
+      .then((res: any) => res.data as Product[])
+      .then((data: any) => data);
   }
 
   getProductsWithOrdersSmall() {
     return this.http.get<any>('assets/demo/data/products-orders-small.json')
       .toPromise()
-      .then((res:any) => res.data as Product[])
-      .then((data:any) => data);
+      .then((res: any) => res.data as Product[])
+      .then((data: any) => data);
   }
 
   getProductsWithOrdersLarge() {
     return this.http.get<any>('assets/demo/data/products-orders.json')
       .toPromise()
-      .then((res:any) => res.data as Product[])
-      .then((data:any) => data);
+      .then((res: any) => res.data as Product[])
+      .then((data: any) => data);
   }
 }
 

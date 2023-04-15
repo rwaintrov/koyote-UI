@@ -28,7 +28,7 @@ export class LayoutService {
   config: AppConfig = {
     ripple: true,
     inputStyle: 'outlined',
-    menuMode: 'compact',
+    menuMode: 'slim',
     colorScheme: 'light',
     theme: 'blue',
     scale: 14,

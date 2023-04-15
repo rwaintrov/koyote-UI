@@ -1,27 +1,23 @@
-import {Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input} from '@angular/core';
-import {Table} from 'primeng/table';
-import {MessageService, ConfirmationService} from 'primeng/api';
-import {Product, ProductService} from "../../services/product.service";
+import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {Customer, Device, Representative} from "../../../../interfaces/device.interface";
+import {Product, ProductService} from "../../services/product.service";
 import {CustomerService} from "../../../../services/costumer.service";
 import {DeviceService} from "../../services/device.service";
 import {HttpClient} from "@angular/common/http";
-import {map, Observable, Subscription} from "rxjs";
-import {ActivatedRoute, Router} from "@angular/router";
-
+import {Table} from "primeng/table";
 interface expandedRows {
   [key: string]: boolean;
 }
 
 @Component({
-  selector: 'app-device',
-  templateUrl: './device.component.html',
-  styleUrls: ['./device.component.scss']
+  selector: 'app-vendor-device',
+  templateUrl: './vendor-device.component.html',
+  styleUrls: ['./vendor-device.component.scss']
 })
-export class DeviceComponent implements OnInit {
+export class VendorDeviceComponent {
   devices$: any[] = []
   devices: Device[] = [{}];
-
+  metrics: any[] = [];
   value: any;
   customers1: Customer[] = [];
 
@@ -51,25 +47,19 @@ export class DeviceComponent implements OnInit {
 
   loading: boolean = true;
   vendors: any[] = [];
-  vendor!: string;
   @ViewChild('filter') filter!: ElementRef;
 
-  constructor(private customerService: CustomerService, private productService: ProductService, private deviceService: DeviceService, private http: HttpClient,
-              private route: ActivatedRoute) {
+  constructor(private customerService: CustomerService, private productService: ProductService, private deviceService: DeviceService, private http: HttpClient) {
   }
 
 
   //   .toPromise()
   //   .then((res:any) => res.data as Device[])
   //   .then((data:any) => data);
-  getDevices(vendor?: string) {
-    console.log(vendor)
+  getDevices() {
     this.deviceService.getDevices().subscribe((res: any) => {
       this.devices = res.data
-      if (vendor != undefined) {
-        this.devices = this.devices.filter((d: any) => d.vendor === vendor)
-      }
-
+      console.log(this.devices)
       this.loading = false;
       //   let j = 0;
       //   let i = 0;
@@ -100,7 +90,7 @@ export class DeviceComponent implements OnInit {
     this.deviceService.getVendors();
     console.log("i here")
     console.log(this.deviceService.getVendors())
-    this.vendors = this.deviceService.vendors;
+    this.vendors=this.deviceService.vendors;
     console.log("i here2");
     console.log(this.vendors)
 
@@ -123,15 +113,12 @@ export class DeviceComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.params.subscribe((params: any) => {
-      this.vendor = params['vendor'];
-      this.getDevices(this.vendor);
-    })
-    // this.deviceService.a();
-    // this.getVendors();
-    // console.log(this.deviceService.getVendors())
-    // console.log("sssssssa")
-    // console.log(this.deviceService.vendors);
+
+    this.getDevices();
+    this.getVendors();
+    console.log(this.deviceService.getVendors())
+    console.log("sssssssa")
+    console.log(this.deviceService.vendors);
 
     // this.deviceService.getDevices()
     //   .then((devices:any) => {
@@ -141,31 +128,43 @@ export class DeviceComponent implements OnInit {
     //   // @ts-ignore
     //   this.devices.forEach(device => device.date = new Date(device.date));
     // });
-    // this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
-    // this.customerService.getCustomersLarge().then(customers => this.customers3 = customers);
-    // this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
-    //
-    // this.representatives = [
-    //   {name: 'Amy Elsner', image: 'amyelsner.png'},
-    //   {name: 'Anna Fali', image: 'annafali.png'},
-    //   {name: 'Asiya Javayant', image: 'asiyajavayant.png'},
-    //   {name: 'Bernardo Dominic', image: 'bernardodominic.png'},
-    //   {name: 'Elwin Sharvill', image: 'elwinsharvill.png'},
-    //   {name: 'Ioni Bowcher', image: 'ionibowcher.png'},
-    //   {name: 'Ivan Magalhaes', image: 'ivanmagalhaes.png'},
-    //   {name: 'Onyama Limba', image: 'onyamalimba.png'},
-    //   {name: 'Stephen Shaw', image: 'stephenshaw.png'},
-    //   {name: 'XuXue Feng', image: 'xuxuefeng.png'}
-    // ];
-    //
-    // this.statuses = [
-    //   {label: 'Unqualified', value: 'unqualified'},
-    //   {label: 'Qualified', value: 'qualified'},
-    //   {label: 'New', value: 'new'},
-    //   {label: 'Negotiation', value: 'negotiation'},
-    //   {label: 'Renewal', value: 'renewal'},
-    //   {label: 'Proposal', value: 'proposal'}
-    // ];
+    this.customerService.getCustomersMedium().then(customers => this.customers2 = customers);
+    this.customerService.getCustomersLarge().then(customers => this.customers3 = customers);
+    this.productService.getProductsWithOrdersSmall().then(data => this.products = data);
+
+    this.metrics = [
+      {
+        title: 'Total CVE’s for vendor',
+        // icon: 'pi pi-shopping-cart',
+        color_light: '#64B5F6',
+        color_dark: '#1976D2',
+        textContent: [
+          {amount: '90', text: 'Detected'},
+          {amount: '15', text: 'At Risk'}
+        ]
+      },
+      {
+        title: 'Involved in PAS',
+        // icon: 'pi pi-dollar',
+        color_light: '#7986CB',
+        color_dark: '#303F9F',
+        textContent: [
+          {amount: '9', text: 'Detected'},
+          {amount: '84%', text: 'Avg.Probability'}
+        ]
+      },
+      // {
+      //   title: 'Overall Risk level',
+      //   // icon: 'pi pi-users',
+      //   color_light: '#4DB6AC',
+      //   color_dark: '#00796B',
+      //   textContent: [
+      //     {amount: 18, text: 'Detected'},
+      //     {amount: 'HIGH', text: 'AVG. Criticality'}
+      //   ]
+      // },
+    ];
+
   }
 
   onSort() {

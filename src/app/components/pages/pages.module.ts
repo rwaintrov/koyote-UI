@@ -35,6 +35,8 @@ import {ChipsModule} from "primeng/chips";
 import {StepsModule} from "primeng/steps";
 import {TabMenuModule} from "primeng/tabmenu";
 import {BreadcrumbModule} from "primeng/breadcrumb";
+import { VendorDeviceComponent } from './components/vendor-device/vendor-device.component';
+import {CardModule} from "primeng/card";
 // import {ChartModule} from "primeng/chart";
 
 
@@ -52,38 +54,40 @@ import {BreadcrumbModule} from "primeng/breadcrumb";
     DeviceComponent,
     AlertComponent,
     CveComponent,
-    PasComponent
+    PasComponent,
+    VendorDeviceComponent
   ],
   exports: [
     TopBarComponent,
     ConfigComponent
   ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule,
-    StyleClassModule,
-    TooltipModule,
-    RadioButtonModule,
-    InputSwitchModule,
-    FormsModule,
-    SidebarModule,
-    DropdownModule,
-    TableModule,
-    MenuModule,
-    ChartModule,
-    ButtonModule,
-    FileUploadModule,
-    ToggleButtonModule,
-    ToastModule,
-    RatingModule,
-    MultiSelectModule,
-    SliderModule,
-    ChipsModule,
-    StepsModule,
-    TabMenuModule,
-    BreadcrumbModule,
-    // ChartModule,
+    imports: [
+        CommonModule,
+        PagesRoutingModule,
+        StyleClassModule,
+        TooltipModule,
+        RadioButtonModule,
+        InputSwitchModule,
+        FormsModule,
+        SidebarModule,
+        DropdownModule,
+        TableModule,
+        MenuModule,
+        ChartModule,
+        ButtonModule,
+        FileUploadModule,
+        ToggleButtonModule,
+        ToastModule,
+        RatingModule,
+        MultiSelectModule,
+        SliderModule,
+        ChipsModule,
+        StepsModule,
+        TabMenuModule,
+        BreadcrumbModule,
+        CardModule,
+        // ChartModule,
 
-  ]
+    ]
 })
 export class PagesModule { }

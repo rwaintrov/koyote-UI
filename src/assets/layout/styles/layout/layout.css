@@ -877,7 +877,7 @@ a {
 }
 
 .layout-sidebar-cyan {
-  --d-sidebar-bg-color:#00BCD4;
+  --d-sidebar-bg-color: #ff0000;
   --d-sidebar-bg-color-alt:#008494;
   --d-sidebar-border:0 none;
   --d-app-name-color:#ffffff;
@@ -905,7 +905,7 @@ a {
 }
 
 .layout-sidebar-indigo {
-  --d-sidebar-bg-color:#3F51B5;
+  --d-sidebar-bg-color: #b53f3f;
   --d-sidebar-bg-color-alt:#2c397f;
   --d-sidebar-border:0 none;
   --d-app-name-color:#ffffff;
