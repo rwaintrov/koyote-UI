@@ -59,7 +59,7 @@ export class MenuComponent implements OnInit {
         },
         {
           label: 'Alerts',
-          icon: 'pi pi-fw pi-download',
+          icon: 'CoyoteWhite',
           routerLink: ['/alert']
         },
         {

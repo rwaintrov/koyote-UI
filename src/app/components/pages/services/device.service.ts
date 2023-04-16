@@ -32,7 +32,7 @@ export class DeviceService {
         return {
           label: u.name,
           icon: 'pi pi-fw pi-align-left',
-          routerLink: ['/device', u.name]
+          routerLink: ['/vendor-device', u.name]
         }
       });
     }))

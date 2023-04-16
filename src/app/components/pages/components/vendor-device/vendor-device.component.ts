@@ -5,6 +5,7 @@ import {CustomerService} from "../../../../services/costumer.service";
 import {DeviceService} from "../../services/device.service";
 import {HttpClient} from "@angular/common/http";
 import {Table} from "primeng/table";
+import {ActivatedRoute} from "@angular/router";
 interface expandedRows {
   [key: string]: boolean;
 }
@@ -47,19 +48,58 @@ export class VendorDeviceComponent {
 
   loading: boolean = true;
   vendors: any[] = [];
+  vendor!: string;
+  basicData: any;
+
+  basicOptions: any;
+
   @ViewChild('filter') filter!: ElementRef;
 
-  constructor(private customerService: CustomerService, private productService: ProductService, private deviceService: DeviceService, private http: HttpClient) {
+  constructor(private customerService: CustomerService, private productService: ProductService, private deviceService: DeviceService, private http: HttpClient,
+              private route: ActivatedRoute) {
   }
 
 
   //   .toPromise()
   //   .then((res:any) => res.data as Device[])
   //   .then((data:any) => data);
-  getDevices() {
+  // getDevices() {
+  //   this.deviceService.getDevices().subscribe((res: any) => {
+  //     this.devices = res.data
+  //     console.log(this.devices)
+  //     this.loading = false;
+  //     //   let j = 0;
+  //     //   let i = 0;
+  //     //   let x = 0;
+  //     //   // debugger
+  //     //   this.vendors[0] = this.devices[0].vendor
+  //     //   for (i = 1; i < this.devices.length; i++) {
+  //     //     let temp = this.devices[i].vendor
+  //     //     for (j = 0; j <= 10; j++) {
+  //     //       if (this.vendors[j] == temp) {
+  //     //         break;
+  //     //       }
+  //     //     }
+  //     //     if (j == 11) {
+  //     //       x++;
+  //     //       this.vendors[x] = temp;
+  //     //     }
+  //     //     j = 0;
+  //     //   }
+  //     //   console.log(this.vendors);
+  //     //   return this.devices
+  //     //
+  //     // }
+  //   })
+  // }
+  getDevices(vendor?: string) {
+    console.log(vendor)
     this.deviceService.getDevices().subscribe((res: any) => {
       this.devices = res.data
-      console.log(this.devices)
+      if (vendor != undefined) {
+        this.devices = this.devices.filter((d: any) => d.vendor === vendor)
+      }
+
       this.loading = false;
       //   let j = 0;
       //   let i = 0;
@@ -113,12 +153,30 @@ export class VendorDeviceComponent {
   }
 
   ngOnInit() {
-
-    this.getDevices();
-    this.getVendors();
-    console.log(this.deviceService.getVendors())
-    console.log("sssssssa")
-    console.log(this.deviceService.vendors);
+    this.basicData = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      datasets: [
+        {
+          label: 'My First dataset',
+          backgroundColor: '#42A5F5',
+          data: [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+          label: 'My Second dataset',
+          backgroundColor: '#FFA726',
+          data: [28, 48, 40, 19, 86, 27, 90]
+        }
+      ]
+    };
+    this.route.params.subscribe((params: any) => {
+      this.vendor = params['vendor'];
+      this.getDevices(this.vendor);
+    })
+    // this.getDevices();
+    // this.getVendors();
+    // console.log(this.deviceService.getVendors())
+    // console.log("sssssssa")
+    // console.log(this.deviceService.vendors);
 
     // this.deviceService.getDevices()
     //   .then((devices:any) => {
@@ -165,6 +223,35 @@ export class VendorDeviceComponent {
       // },
     ];
 
+  }
+  applyLightTheme() {
+    this.basicOptions = {
+      plugins: {
+        legend: {
+          labels: {
+            color: '#495057'
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#495057'
+          },
+          grid: {
+            color: '#ebedef'
+          }
+        },
+        y: {
+          ticks: {
+            color: '#495057'
+          },
+          grid: {
+            color: '#ebedef'
+          }
+        }
+      }
+    };
   }
 
   onSort() {

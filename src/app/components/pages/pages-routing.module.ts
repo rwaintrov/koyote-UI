@@ -14,7 +14,7 @@ const routes: Routes = [
 
       {path: '', component: DashboardComponent},
       {path: 'device', component: DeviceComponent},
-      {path: 'device/:vendor', component: DeviceComponent},
+      {path: 'vendor-device/:vendor', component: VendorDeviceComponent},
       {path: 'vendor-device', component: VendorDeviceComponent},
       {path: 'PAS', component: PasComponent},
       {path: 'CVE', component: CveComponent},
