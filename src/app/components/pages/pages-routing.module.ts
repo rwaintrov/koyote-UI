@@ -7,6 +7,7 @@ import {CveComponent} from "./components/cve/cve.component";
 import {PasComponent} from "./components/pas/pas.component";
 import {AlertComponent} from "./components/alert/alert.component";
 import {VendorDeviceComponent} from "./components/vendor-device/vendor-device.component";
+import {SingleDeviceComponent} from "./components/single-device/single-device.component";
 
 const routes: Routes = [
   {
@@ -17,8 +18,10 @@ const routes: Routes = [
       {path: 'vendor-device/:vendor', component: VendorDeviceComponent},
       {path: 'vendor-device', component: VendorDeviceComponent},
       {path: 'PAS', component: PasComponent},
-      {path: 'CVE', component: CveComponent},
+      // {path: 'CVE', component: CveComponent},
       {path: 'alert', component: AlertComponent},
+      {path: 'single-device/:ip', component: SingleDeviceComponent},
+      {path: 'CVE/:id', component: CveComponent},
     ]
   },
 ];

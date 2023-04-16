@@ -211,16 +211,16 @@ export class VendorDeviceComponent {
           {amount: '84%', text: 'Avg.Probability'}
         ]
       },
-      // {
-      //   title: 'Overall Risk level',
-      //   // icon: 'pi pi-users',
-      //   color_light: '#4DB6AC',
-      //   color_dark: '#00796B',
-      //   textContent: [
-      //     {amount: 18, text: 'Detected'},
-      //     {amount: 'HIGH', text: 'AVG. Criticality'}
-      //   ]
-      // },
+      {
+        title: 'Overall Risk level',
+        // icon: 'pi pi-users',
+        color_light: '#4DB6AC',
+        color_dark: '#00796B',
+        textContent: [
+          {amount: 18, text: 'Detected'},
+          {amount: 'HIGH', text: 'AVG. Criticality'}
+        ]
+      },
     ];
 
   }

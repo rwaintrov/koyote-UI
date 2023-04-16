@@ -10,4 +10,8 @@
   .p-breadcrumb ul{
     width:80%
   }
+  .pi-chevron-right:before {
+    content: "\e901";
+    color: blue;
+  }
 }

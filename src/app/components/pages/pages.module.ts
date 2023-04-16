@@ -37,6 +37,7 @@ import {TabMenuModule} from "primeng/tabmenu";
 import {BreadcrumbModule} from "primeng/breadcrumb";
 import { VendorDeviceComponent } from './components/vendor-device/vendor-device.component';
 import {CardModule} from "primeng/card";
+import { SingleDeviceComponent } from './components/single-device/single-device.component';
 // import {ChartModule} from "primeng/chart";
 
 
@@ -55,7 +56,8 @@ import {CardModule} from "primeng/card";
     AlertComponent,
     CveComponent,
     PasComponent,
-    VendorDeviceComponent
+    VendorDeviceComponent,
+    SingleDeviceComponent
   ],
   exports: [
     TopBarComponent,

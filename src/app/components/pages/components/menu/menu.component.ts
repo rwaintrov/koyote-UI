@@ -50,7 +50,7 @@ export class MenuComponent implements OnInit {
         {
           label: 'Potential Attack Scenarios',
           icon: 'pi pi-share-alt',
-          routerLink: ['/alert']
+          routerLink: ['/PAS']
         },
         {
           label: 'Compliance',
@@ -59,7 +59,7 @@ export class MenuComponent implements OnInit {
         },
         {
           label: 'Alerts',
-          icon: 'CoyoteWhite',
+          icon: 'pi pi-fw pi-download',
           routerLink: ['/alert']
         },
         {

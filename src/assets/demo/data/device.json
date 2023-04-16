@@ -9,7 +9,7 @@
       "series": "2650",
       "model": "",
       "firmware": "",
-        "lastUpdate":"",
+      "lastUpdate": "",
       "lastSeen": ""
     },
     {
@@ -21,7 +21,7 @@
       "series": "i7",
       "model": "",
       "firmware": "",
-      "lastUpdate":"",
+      "lastUpdate": "",
       "lastSeen": ""
     },
     {
@@ -33,7 +33,7 @@
       "series": "i5",
       "model": "",
       "firmware": "",
-      "lastUpdate":"",
+      "lastUpdate": "",
       "lastSeen": ""
     },
     {
@@ -45,7 +45,7 @@
       "series": "i5",
       "model": "",
       "firmware": "",
-      "lastUpdate":"",
+      "lastUpdate": "",
       "lastSeen": ""
     },
     {
@@ -57,7 +57,7 @@
       "series": "M210",
       "model": "",
       "firmware": "",
-      "lastUpdate":"",
+      "lastUpdate": "",
       "lastSeen": ""
     },
     {
@@ -69,7 +69,7 @@
       "series": "M340",
       "model": "",
       "firmware": "",
-      "lastUpdate":"",
+      "lastUpdate": "",
       "lastSeen": ""
     },
     {
@@ -81,9 +81,237 @@
       "series": "3300",
       "model": "",
       "firmware": "",
-      "lastUpdate":"",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1007,
+      "category": "Network Switch / Router",
+      "vendor": "Cisco",
+      "IP_address": "192.168.1.1",
+      "MAC_address": "00:0E:23:1A:1B:dd",
+      "series": "2650",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1008,
+      "category": "PC",
+      "vendor": "AsusTek",
+      "IP_address": "192.168.122.544",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "i7",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1009,
+      "category": "PC",
+      "vendor": "DELL",
+      "IP_address": "192.168.1.13",
+      "MAC_address": "00:0E:23:1A:1B:dd",
+      "series": "i5",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1010,
+      "category": "PLC",
+      "vendor": "GE",
+      "IP_address": "192.168.1.17",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "M210",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1011,
+      "category": "PLC",
+      "vendor": "Modicon",
+      "IP_address": "192.168.1.21",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "M340",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1012,
+      "category": "Printer",
+      "vendor": "HP",
+      "IP_address": "192.168.1.200",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "3300",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1013,
+      "category": "Network Switch / Router",
+      "vendor": "Cisco",
+      "IP_address": "192.168.1.1",
+      "MAC_address": "00:0E:23:1A:1B:dd",
+      "series": "2650",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1014,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.122.544",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "i7",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1015,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.187.1.9",
+      "MAC_address": "22:0D:23:1A:1B:dd",
+      "series": "i7",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1016,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "892.18.1.1",
+      "MAC_address": "00:0E:2:1A:1B:dd",
+      "series": "i3",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1017,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.17",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "M210",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1018,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.21",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "M340",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1019,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.200",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "3300",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1020,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.13",
+      "MAC_address": "00:0E:23:1A:1B:dd",
+      "series": "i5",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1021,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.17",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "M210",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1022,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.21",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "M340",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1023,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.200",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "3300",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1024,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.1.1",
+      "MAC_address": "00:0E:23:1A:1B:dd",
+      "series": "2650",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
+      "lastSeen": ""
+    },
+    {
+      "id": 1025,
+      "category": "PC",
+      "vendor": "Siemens",
+      "IP_address": "192.168.122.544",
+      "MAC_address": "00:0E:23:33:22:11",
+      "series": "i7",
+      "model": "",
+      "firmware": "",
+      "lastUpdate": "",
       "lastSeen": ""
     }
-
   ]
+
 }
