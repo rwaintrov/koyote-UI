@@ -1,0 +1,15 @@
+td {
+  height: 3rem;
+}
+.a{
+  border-right:solid 1px rgba(128, 128, 128, 0.46);
+}
+ul{
+  display: flex;
+  flex-flow: row wrap;
+  list-style:none;
+}
+li{
+  flex: 1 1 33%;
+
+}

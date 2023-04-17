@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="col ">
+    <div class="p-card row  " style="height:250px">
+      <div class="col-12 d-flex align-items-center m-0 p-0">
+        <h3 class="ms-4">{{ip}}</h3>
+      </div>
+      <ul class="col mx-3">
+        <li>Vendor: {{currentDevice?.vendor}}</li>
+        <li>Series: {{currentDevice?.series}}</li>
+        <li>Model: S7-400</li>
+        <li>Category: {{currentDevice?.category}}</li>
+        <li>Firmware: {{currentDevice?.firmware}}</li>
+        <li>Firmware Version:</li>
+        <li>SN: 6ED10551CB100BA2</li>
+        <li>MAC: {{currentDevice?.MAC_address}}</li>
+
+
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+        <!--        <div>Series: Siemens</div>-->
+
+      </ul>
+    </div>
+    <div class="row p-card my-5">
+      <div class="col">
+        <div class="flex justify-content-between">
+          <h4>
+            Related CVE's
+          </h4>
+
+        </div>
+
+        <p>Requires immediate attention</p>
+
+        <p-table [value]="cves">
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="CVE-ID" style="width:10%;min-width:6rem;">CVE-ID
+                <p-sortIcon field="CVE-ID"></p-sortIcon>
+              </th>
+              <th pSortableColumn="Short Description" style="width:30%;min-width:10rem;">Short Description
+                <p-sortIcon field="Short Description"></p-sortIcon>
+              </th>
+              <th pSortableColumn="CVSS 3.1" style="width:20%;min-width:10rem;">CVSS 3.1
+                <p-sortIcon field="CVSS 3.1"></p-sortIcon>
+              </th>
+              <th pSortableColumn="Risk Level" style="width:30%;min-width:10rem;">Risk Level
+                <p-sortIcon field="Risk Level"></p-sortIcon>
+              </th>
+              <!--              <th style="width:10%;min-width:6rem;"></th>-->
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-cve>
+            <tr>
+              <td> <a [routerLink]="['/CVE',cve.id]">{{cve.id}}</a></td>
+              <td>{{cve.short_description}}</td>
+              <td></td>
+              <td>{{cve.severity}}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+    <div class="row p-card ">
+      <div class="col-12">
+        <div><h3>Related informatiom</h3></div>
+      </div>
+      <div class="col-3 a">
+        <div>---</div>
+      </div>
+      <div class="col-3 a">
+        <div>---</div>
+      </div>
+      <div class="col-3 a">
+        <div>---</div>
+      </div>
+      <div class="col-3 a">
+        <div>---</div>
+      </div>
+      <div class="col-3 align-items-center">
+        <div>Exploitability</div>
+      </div>
+      <div class="col-3 align-items-center">
+        <div> Attack Vector</div>
+      </div>
+      <div class="col-3 align-items-center">
+        <div> AVG. CDP</div>
+      </div>
+      <div class="col-3 align-items-center">
+        <div> Participates in PAS</div>
+      </div>
+    </div>
+  </div>
+</div>
