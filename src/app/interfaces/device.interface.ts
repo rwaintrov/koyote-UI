@@ -9,6 +9,9 @@ export interface Device {
   firmware?:string;
   lastUpdate?:Date;
   lastSeen?:Date;
+  status?: string;
+  Risk?: string;
+  CDP?: string;
 
 
 }

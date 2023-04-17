@@ -32,16 +32,16 @@
 
     <div class="row p-card">
       <div class="col">
-        <p-table [value]="arr">
+        <p-table [value]="data">
           <ng-template pTemplate="header">
             <tr>
                 <th pSortableColumn="Date" style="width:10%;min-width:2rem;">Date
                 <p-sortIcon field="Date"></p-sortIcon>
               </th>
-              <th pSortableColumn="Time" style="width:30%;min-width:7rem;">Time
+              <th pSortableColumn="Time" style="width:10%;min-width:2rem;">Time
                 <p-sortIcon field="Time"></p-sortIcon>
               </th>
-              <th pSortableColumn="Risk Level" style="width:20%;min-width:7rem;">Risk Level
+              <th pSortableColumn="Risk Level" style="width:10%;min-width:7rem;">Risk Level
                 <p-sortIcon field="Risk Level"></p-sortIcon>
               </th>
               <th pSortableColumn="Status" style="width:10%;min-width:7rem;">Status
@@ -50,17 +50,33 @@
               <th pSortableColumn="Affected Areas" style="width:10%;min-width:7rem;">Affected Areas
                 <p-sortIcon field="Affected Areas"></p-sortIcon>
               </th>
-              <!--              <th style="width:10%;min-width:6rem;"></th>-->
+              <th pSortableColumn="Priority" style="width:10%;min-width:7rem;">Priority
+                <p-sortIcon field="Priority"></p-sortIcon>
+              </th>
+              <th pSortableColumn="View Source" style="width:10%;min-width:7rem;">View Source
+                <p-sortIcon field="View Source"></p-sortIcon>
+              </th>
             </tr>
           </ng-template>
-          <ng-template pTemplate="body" let-product>
+          <ng-template pTemplate="body" let-d>
             <tr>
+              <td>{{d.Date}}</td>
+              <td>{{d.Time}}</td>
+              <td [ngStyle]="{background:[d.Color]}">{{d.Risk}}</td>
+              <td> </td>
               <td></td>
               <td></td>
+
               <td></td>
-              <td></td>
-              <td></td>
+
             </tr>
+<!--            <tr>-->
+<!--              <td></td>-->
+<!--              <td></td>-->
+<!--              <td></td>-->
+<!--              <td [ngStyle]="{background:[d.RiskLevel]}">{{d.Status}}</td>-->
+<!--              <td></td>-->
+<!--            </tr>-->
           </ng-template>
         </p-table>
       </div>

@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit{
 
   selectedOrderWeek!: any;
   item: any;
-  arr: any[]=[4,3,2,1,6];
+  arr: any[]=[4,3,2,1,6,2,8];
 
 
   constructor(private productService: ProductService, private layoutService: LayoutService,private route :Router) {

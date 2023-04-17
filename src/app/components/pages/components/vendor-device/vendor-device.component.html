@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="row">
-      <div class="col my-5" style="width: 80%;">
+      <div class="col my-2" style="width: 80%;">
       <p-table #dt1 [value]="devices" dataKey="id" [rows]="10" [loading]="loading" [rowHover]="true"
                styleClass="p-datatable-gridlines" [paginator]="true"
                [globalFilterFields]="['category','vendor','IP_address','MAC_address','series','model','firmware','lastUpdate','lastSeen']"
@@ -171,7 +171,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <h5>Vertical</h5>
+        <h3>Total I/O</h3>
         <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
       </div>
     </div>

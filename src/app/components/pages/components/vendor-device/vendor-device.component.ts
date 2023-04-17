@@ -154,18 +154,18 @@ export class VendorDeviceComponent {
 
   ngOnInit() {
     this.basicData = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00',],
       datasets: [
         {
-          label: 'My First dataset',
+          label: 'Current Day',
           backgroundColor: '#42A5F5',
           data: [65, 59, 80, 81, 56, 55, 40]
         },
-        {
-          label: 'My Second dataset',
-          backgroundColor: '#FFA726',
-          data: [28, 48, 40, 19, 86, 27, 90]
-        }
+        // {
+        //   label: 'My Second dataset',
+        //   backgroundColor: '#FFA726',
+        //   data: [28, 48, 40, 19, 86, 27, 90]
+        // }
       ]
     };
     this.route.params.subscribe((params: any) => {
@@ -221,6 +221,16 @@ export class VendorDeviceComponent {
           {amount: 'HIGH', text: 'AVG. Criticality'}
         ]
       },
+      {
+        title: '',
+        // icon: 'pi pi-users',
+        color_light: '#4DD0E1',
+        color_dark: '#0097A7',
+        textContent: [
+          {amount: 0, text: ''},
+          // {amount: 85, text: 'Responded'}
+        ]
+      }
     ];
 
   }
