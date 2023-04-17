@@ -159,7 +159,7 @@ export class VendorDeviceComponent {
         {
           label: 'Current Day',
           backgroundColor: '#42A5F5',
-          data: [65, 59, 80, 81, 56, 55, 40]
+          data: [65, 59, 80, 81, 56, 55, 40,22,36,94,10,6,77,45,8,66,57,88,93,75,45,87,96,41,49]
         },
         // {
         //   label: 'My Second dataset',

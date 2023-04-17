@@ -10,6 +10,7 @@ import {CveService} from "../../services/cve.service";
 export class CveComponent implements OnInit {
   id: any;
   cves: any[] = [];
+  currentCve:any
 
   constructor(private route: ActivatedRoute, private cveService: CveService) {
 
@@ -24,14 +25,13 @@ export class CveComponent implements OnInit {
     })
   }
 
-  getCurrentCve(id?: any) {
+  getCurrentCve() {
     this.cveService.getCve().subscribe((res: any) => {
       this.cves = res['data'];
-      const a = this.cves.filter((x: any) => {
+      this.currentCve= this.cves.find((x: any) =>
           x.id === this.id
-
-        }
       )
-      console.log(a);  })
+      // console.log(this.currentCve);
+    })
   }
 }
