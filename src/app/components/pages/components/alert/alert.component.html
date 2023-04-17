@@ -1,0 +1,72 @@
+<div class="row ">
+  <div class="col">
+
+    <div class="row p-card mb-5">
+      <div class="col-12">
+        <h3>Alarm Page</h3>
+      </div>
+      <div class="col-12 drop-container">
+        <div class="b pb-5">
+          <span>Status: </span>
+          <p-dropdown [options]="statusOptions" placeholder="Select Status" (onChange)="onSortChange($event)"></p-dropdown>
+        </div>
+        <div class="b pb-5">
+          <span>Date: </span>
+          <p-dropdown [options]="dateOptions" placeholder="Select Date" (onChange)="onSortChange($event)"></p-dropdown>
+        </div>
+
+        <div class="b pb-5">
+          <span>Priority: </span>
+          <p-dropdown [options]="priorityOptions" placeholder="Select Priority" (onChange)="onSortChange($event)"></p-dropdown>
+        </div>
+        <div class="b pb-5">
+          <span>Risk: </span>
+          <p-dropdown [options]="riskOptions" placeholder="Select Risk" (onChange)="onSortChange($event)"></p-dropdown>
+        </div>
+        <div class="b pb-5">
+          <span>Area: </span>
+          <p-dropdown [options]="areaOptions" placeholder="Select Area" (onChange)="onSortChange($event)"></p-dropdown>
+        </div>
+      </div>
+    </div>
+
+    <div class="row p-card">
+      <div class="col">
+        <p-table [value]="arr">
+          <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="Date" style="width:10%;min-width:2rem;">Date
+                <p-sortIcon field="Date"></p-sortIcon>
+              </th>
+              <th pSortableColumn="Time" style="width:30%;min-width:7rem;">Time
+                <p-sortIcon field="Time"></p-sortIcon>
+              </th>
+              <th pSortableColumn="Risk Level" style="width:20%;min-width:7rem;">Risk Level
+                <p-sortIcon field="Risk Level"></p-sortIcon>
+              </th>
+              <th pSortableColumn="Status" style="width:10%;min-width:7rem;">Status
+                <p-sortIcon field="Status"></p-sortIcon>
+              </th>
+              <th pSortableColumn="Affected Areas" style="width:10%;min-width:7rem;">Affected Areas
+                <p-sortIcon field="Affected Areas"></p-sortIcon>
+              </th>
+              <!--              <th style="width:10%;min-width:6rem;"></th>-->
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

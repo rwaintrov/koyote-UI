@@ -31,7 +31,7 @@ export class DeviceService {
      return uniqueVendors.map(u => {
         return {
           label: u.name,
-          icon: 'pi pi-fw pi-align-left',
+          icon: 'pi pi-box',
           routerLink: ['/vendor-device', u.name]
         }
       });

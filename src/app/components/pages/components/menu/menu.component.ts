@@ -28,17 +28,17 @@ export class MenuComponent implements OnInit {
       this.model = [
         {
           label: 'Dashboard',
-          icon: 'pi pi-home',
+          icon: 'pi pi-chart-bar',
           routerLink: ['/pages']
         },
         {separator: true},
         {
           label: 'Inventory',
-          icon: 'pi pi-mobile',
+          icon: 'pi pi-server',
           items: [
             {
               label: 'Device Inventory',
-              icon: 'pi pi-fw pi-align-left',
+              icon: 'pi pi-box',
               items: [
                  ...res
               ]
@@ -49,23 +49,23 @@ export class MenuComponent implements OnInit {
         {separator: true},
         {
           label: 'Potential Attack Scenarios',
-          icon: 'pi pi-share-alt',
+          icon: 'pi pi-backward',
           routerLink: ['/PAS']
         },
         {
           label: 'Compliance',
-          icon: 'pi pi-fw pi-download',
-          routerLink: ['/alert']
+          icon: 'pi pi-check-square',
+          routerLink: ['/pages']
         },
         {
           label: 'Alerts',
-          icon: 'pi pi-fw pi-download',
+          icon: 'pi pi-exclamation-triangle',
           routerLink: ['/alert']
         },
         {
           label: 'Settings',
           icon: 'pi pi-cog',
-          routerLink: ['/alert']
+          routerLink: ['/pages']
         }
       ];
 
