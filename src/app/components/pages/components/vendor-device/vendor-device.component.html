@@ -15,19 +15,19 @@
       </div>
       <div class="p-card col-12 mb-2 ">
         <div>Pocket Transmitted</div>
-        <div style="color: blue">Average Rate</div>
+        <div style="color: blue">31,295 kb</div>
       </div>
       <div class="p-card col-12 my-2">
         <div>Network-Packes Out</div>
-        <div style="color:blue">Average Rate</div>
+        <div style="color:blue">43,911 kb</div>
       </div>
       <div class="p-card col-12 my-2 ">
         <div>Network-Packes In</div>
-        <div style="color:blue">Count</div>
+        <div style="color:blue">132,871</div>
       </div>
       <div class="p-card col-12 my-2 ">
         <div>Upload and Download</div>
-        <div style="color: blue">Count</div>
+        <div style="color: blue">1422 mb</div>
       </div>
       <div class="p-card col-12 my-2 ">
         <div>Involved in PAS</div>
@@ -112,23 +112,23 @@
         </ng-template>
         <ng-template pTemplate="body" let-device>
           <tr>
-            <td><a [routerLink]="['/single-device',device.IP_address]">{{device.IP_address}}</a>
-
+            <td>
+              <a [routerLink]="['/single-device',device.IP_address]">{{device.IP_address}}</a>
             </td>
             <td>
-
+              <a [routerLink]="['/single-device',device.IP_address]">{{device.series}}</a>
             </td>
             <td>
-
+              <a [routerLink]="['/single-device',device.IP_address]">{{device.model}}</a>
             </td>
             <td>
-
+              active
             </td>
             <td>
-
+              Low
             </td>
             <td>
-
+              4.2
             </td>
 
             <!--            <td>-->

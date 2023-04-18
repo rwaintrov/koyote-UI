@@ -90,8 +90,8 @@ export class DashboardComponent implements OnInit{
         color_light: '#64B5F6',
         color_dark: '#1976D2',
         textContent: [
-          {amount: '90', text: 'Detected'},
-          {amount: '15', text: 'At Risk'}
+          {amount: '31', text: 'Detected'},
+          {amount: '4', text: 'At Risk'}
         ]
       },
       {
@@ -100,8 +100,8 @@ export class DashboardComponent implements OnInit{
         color_light: '#7986CB',
         color_dark: '#303F9F',
         textContent: [
-          {amount: '9', text: 'Detected'},
-          {amount: '84%', text: 'Avg.Probability'}
+          {amount: '4', text: 'Detected'},
+          {amount: '16%', text: 'Avg.Probability'}
         ]
       },
       {
@@ -110,7 +110,7 @@ export class DashboardComponent implements OnInit{
         color_light: '#4DB6AC',
         color_dark: '#00796B',
         textContent: [
-          {amount: 18, text: 'Detected'},
+          {amount: 3, text: 'Detected'},
           {amount: 'HIGH', text: 'AVG. Criticality'}
         ]
       },
@@ -121,7 +121,7 @@ export class DashboardComponent implements OnInit{
         color_dark: '#0097A7',
         textContent: [
           {amount: 1, text: 'in last 24 hours'},
-          // {amount: 85, text: 'Responded'}
+          {amount: 3, text: 'Responded'}
         ]
       }
     ];
@@ -163,7 +163,7 @@ export class DashboardComponent implements OnInit{
     const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
     const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
     this.ordersChart = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       datasets: [{
         label: 'New',
         data: [2, 7, 20, 9, 16, 9, 5],

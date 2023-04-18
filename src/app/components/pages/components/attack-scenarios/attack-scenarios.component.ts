@@ -92,8 +92,8 @@ export class AttackScenariosComponent implements OnInit{
         color_light: '#64B5F6',
         color_dark: '#1976D2',
         textContent: [
-          {amount: '90', text: 'Dedected'},
-          {amount: '15', text: 'At Risk'}
+          {amount: '31', text: 'Dedected'},
+          {amount: '4', text: 'At Risk'}
         ]
       },
       {
@@ -102,8 +102,8 @@ export class AttackScenariosComponent implements OnInit{
         color_light: '#7986CB',
         color_dark: '#303F9F',
         textContent: [
-          {amount: '9', text: 'Dedecteed'},
-          {amount: '84%', text: 'Avg.Probability'}
+          {amount: '3', text: 'Dedecteed'},
+          {amount: '14%', text: 'Avg.Probability'}
         ]
       },
       {
@@ -112,7 +112,7 @@ export class AttackScenariosComponent implements OnInit{
         color_light: '#4DB6AC',
         color_dark: '#00796B',
         textContent: [
-          {amount: 18, text: 'Detected'},
+          {amount: 4, text: 'Detected'},
           {amount: 'HIGH', text: 'AVG. Criticality'}
         ]
       },

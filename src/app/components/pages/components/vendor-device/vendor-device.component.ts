@@ -197,8 +197,8 @@ export class VendorDeviceComponent {
         color_light: '#64B5F6',
         color_dark: '#1976D2',
         textContent: [
-          {amount: '90', text: 'Detected'},
-          {amount: '15', text: 'At Risk'}
+          {amount: '31', text: 'Detected'},
+          {amount: '4', text: 'At Risk'}
         ]
       },
       {
@@ -207,8 +207,8 @@ export class VendorDeviceComponent {
         color_light: '#7986CB',
         color_dark: '#303F9F',
         textContent: [
-          {amount: '9', text: 'Detected'},
-          {amount: '84%', text: 'Avg.Probability'}
+          {amount: '3', text: 'Detected'},
+          {amount: '15%', text: 'Avg.Probability'}
         ]
       },
       {
@@ -217,7 +217,7 @@ export class VendorDeviceComponent {
         color_light: '#4DB6AC',
         color_dark: '#00796B',
         textContent: [
-          {amount: 18, text: 'Detected'},
+          {amount: 2, text: 'Detected'},
           {amount: 'HIGH', text: 'AVG. Criticality'}
         ]
       },
